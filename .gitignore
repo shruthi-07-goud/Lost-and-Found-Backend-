@@ -17,4 +17,3 @@ uploads/
 # Logs
 *.log
 # Local application configuration (may contain secrets)
-src/main/resources/application.properties
