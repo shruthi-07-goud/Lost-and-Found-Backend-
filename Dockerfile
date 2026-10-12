@@ -1,16 +1,16 @@
-FROM eclipse-temurin:21-jdk
-
+FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
 
-COPY mvnw pom.xml ./
-COPY .mvn .mvn
-
-RUN chmod +x mvnw && ./mvnw -DskipTests dependency:go-offline
-
+COPY pom.xml .
 COPY src ./src
 
-RUN ./mvnw -DskipTests package
+RUN mvn -DskipTests package
+
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar target/*.jar"]
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
