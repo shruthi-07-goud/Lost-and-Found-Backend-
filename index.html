@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost and Found Backend Status</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 650px;
+      padding: 36px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      box-sizing: border-box;
+    }
+    h1 { margin-top: 0; color: #0f172a; }
+    .subtitle { color: #64748b; line-height: 1.6; }
+    .status {
+      margin: 28px 0;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ecfdf5;
+      color: #166534;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #16a34a;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .badge { margin: 12px 0 24px; }
+    a { color: #2563eb; overflow-wrap: anywhere; }
+    .link {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 18px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .link:hover { background: #1d4ed8; }
+    .note { font-size: 13px; color: #64748b; margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Lost and Found Backend</h1>
+    <p class="subtitle">
+      Backend API service for the Lost and Found Portal
+    </p>
+
+    <section class="status">
+      <span class="dot"></span>
+      <strong>Backend status check</strong>
+      <p>View the latest automated health-check result below.</p>
+    </section>
+
+    <h2>GitHub Actions Health Check</h2>
+    <div class="badge">
+      <a href="https://github.com/shruthi-07-goud/Lost-and-Found-Backend-/actions/workflows/backend-health.yml">
+        <img
+          src="https://github.com/shruthi-07-goud/Lost-and-Found-Backend-/actions/workflows/backend-health.yml/badge.svg"
+          alt="Backend health check status">
+      </a>
+    </div>
+
+    <p><strong>Live backend URL</strong></p>
+    <a href="https://lost-and-found-backend-sgyz.onrender.com/">
+      https://lost-and-found-backend-sgyz.onrender.com/
+    </a>
+    <br>
+    <a class="link" href="https://lost-and-found-backend-sgyz.onrender.com/">
+      Open Live Backend
+    </a>
+
+    <p class="note">
+      The API runs on Render. GitHub Actions checks its response automatically.
+      The badge shows the latest health-check result.
+    </p>
+
+    <p>
+      <a href="https://github.com/shruthi-07-goud/Lost-and-Found-Backend-">
+        View Backend Source Code on GitHub
+      </a>
+    </p>
+  </main>
+</body>
+</html>
