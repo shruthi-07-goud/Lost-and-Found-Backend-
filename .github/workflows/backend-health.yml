@@ -1,0 +1,21 @@
+name: Backend Health Check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  backend-health:
+    name: Check Render Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check backend response
+        run: |
+          response=$(curl --silent --show-error --fail --max-time 30 https://lost-and-found-backend-sgyz.onrender.com/)
+          echo "$response"
+          echo "$response" | grep -Fq "Success! Lost and Found backend is running."
