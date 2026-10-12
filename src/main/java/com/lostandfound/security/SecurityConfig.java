@@ -73,6 +73,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/items", "/api/items/{id:[0-9]+}", "/api/items/{id:[0-9]+}/matches").permitAll()
                         // Public access to uploaded item photos
                         .requestMatchers("/uploads/**").permitAll()
+                        .requestMatchers("/").permitAll()
                         .requestMatchers("/error").permitAll()
                         // All other endpoints require authentication
                         .anyRequest().authenticated()
