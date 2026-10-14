@@ -16,6 +16,6 @@ jobs:
     steps:
       - name: Check backend response
         run: |
-          response=$(curl --silent --show-error --fail --max-time 30 https://lost-and-found-backend-sgyz.onrender.com/)
+          response=$(curl --silent --show-error --fail --max-time 120 --retry 2 --retry-delay 5 --retry-all-errors https://lost-and-found-backend-sgyz.onrender.com/)
           echo "$response"
           echo "$response" | grep -Fq "Success! Lost and Found backend is running."
